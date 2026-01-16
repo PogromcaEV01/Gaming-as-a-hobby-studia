@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Presentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS - Wygląd */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #0b0c15;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Przyciemnienie tła */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: -1;
+        }
+
+        .presentation-box {
+            width: 90%;
+            max-width: 1000px;
+            height: 85vh;
+            background: rgba(20, 20, 30, 0.95);
+            border: 2px solid #00f2ff;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+            position: relative;
+            overflow: hidden; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide-container {
+            flex-grow: 1;
+            position: relative;
+            width: 100%;
+        }
+
+        .slide {
+            display: none; /* Domyślnie ukryte */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex; /* Tylko aktywny jest widoczny */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Obrazki */
+        .slide-img {
+            width: 100%;
+            max-width: 500px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #bd00ff;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(189, 0, 255, 0.3);
+        }
+
+        h1, h2 {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            margin: 10px 0;
+        }
+
+        h1 { font-size: 2.2rem; color: #00f2ff; text-shadow: 0 0 10px #00f2ff; }
+        h2 { font-size: 1.8rem; color: #bd00ff; }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #ddd;
+            max-width: 800px;
+        }
+
+        ul {
+            text-align: left;
+            font-size: 1.2rem;
+            list-style: none;
+            padding: 0;
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        
+        ul li { margin: 8px 0; padding-left: 30px; position: relative; }
+        ul li::before {
+            content: '🎮';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Przyciski */
+        .controls {
+            height: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            box-sizing: border-box;
+            border-top: 1px solid #333;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .btn {
+            background: black;
+            color: #00f2ff;
+            border: 2px solid #00f2ff;
+            padding: 8px 20px;
+            font-family: 'Orbitron', sans-serif;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: #00f2ff;
+            color: black;
+        }
+
+        .counter {
+            color: #666;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="presentation-box">
+        
+        <div class="slide-container">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Gaming Setup">
+                <h1>Gaming as a Hobby</h1>
+                <p>Why playing games can be a positive activity</p>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Playing Together">
+                <h2>Introduction</h2>
+                <p>Gaming is one of the most popular hobbies in the world.</p>
+                <p>Many people of different ages play video games in their free time.</p>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="VR Gaming">
+                <h2>What is gaming?</h2>
+                <p>Gaming means playing video games on a computer, console, or phone.</p>
+                <p>It can be played alone or with other people online.</p>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Neon Room">
+                <h2>Why do people play?</h2>
+                <p>People play games to:</p>
+                <ul>
+                    <li>relax</li>
+                    <li>have fun</li>
+                    <li>escape from stress</li>
+                </ul>
+                <p>Gaming is a way to enjoy free time.</p>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Retro Gaming">
+                <h2>Gaming as a hobby</h2>
+                <p>A hobby is something we do for pleasure.</p>
+                <p>Gaming fits this definition because people play games regularly and enjoy them.</p>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Relaxing Gaming">
+                <h2>Gaming and relaxation</h2>
+                <p>Video games help people relax after school or work.</p>
+                <p>They allow players to forget about problems for a moment.</p>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Focus">
+                <h2>Skills learned</h2>
+                <p>Gaming can help develop skills such as:</p>
+                <ul>
+                    <li>fast reaction time</li>
+                    <li>problem solving</li>
+                    <li>strategic thinking</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Social Gaming">
+                <h2>Gaming and social life</h2>
+                <p>Many games are played online with friends.</p>
+                <p>Players can communicate, cooperate, and build teamwork skills.</p>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Console">
+                <h2>Different types of games</h2>
+                <p>There are many types of games, for example:</p>
+                <ul>
+                    <li>action games</li>
+                    <li>strategy games</li>
+                    <li>simulation games</li>
+                </ul>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Creative Setup">
+                <h2>Gaming and creativity</h2>
+                <p>Some games encourage creativity.</p>
+                <p>Players can build worlds, create characters, or make their own stories.</p>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Clock/Time">
+                <h2>Gaming in moderation</h2>
+                <p>Like every hobby, gaming should be balanced.</p>
+                <p>It is important to combine gaming with school, sleep, and other activities.</p>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Friends">
+                <h2>Gaming vs stereotypes</h2>
+                <p>Some people think gaming is a waste of time.</p>
+                <p>However, many gamers learn useful skills and make friends through games.</p>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1511882150382-421056c89033?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Tournament">
+                <h2>Part of modern culture</h2>
+                <p>Gaming is a big part of modern culture.</p>
+                <p>There are gaming events, tournaments, and online communities.</p>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1595769816263-9b910be24d5f?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Happy Gamer">
+                <h2>Why gaming is a good hobby</h2>
+                <p>Gaming can be fun, relaxing, and social.</p>
+                <p>When played responsibly, it can be a positive hobby.</p>
+            </div>
+
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80" class="slide-img" alt="Arcade">
+                <h2>Conclusion</h2>
+                <p>Gaming is more than just playing games.</p>
+                <p>It is a hobby that can help people relax, learn, and connect with others.</p>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn" onclick="move(-1)">PREV</button>
+            <div class="counter" id="counter">1 / 15</div>
+            <button class="btn" onclick="move(1)">NEXT</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const counter = document.getElementById('counter');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            if (index >= slides.length) currentSlide = 0;
+            else if (index < 0) currentSlide = slides.length - 1;
+            else currentSlide = index;
+
+            slides[currentSlide].classList.add('active');
+            counter.innerText = (currentSlide + 1) + ' / ' + slides.length;
+        }
+
+        function move(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if(e.key === 'ArrowRight') move(1);
+            if(e.key === 'ArrowLeft') move(-1);
+        });
+    </script>
+
+</body>
+</html>
