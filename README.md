@@ -76,11 +76,4 @@ Czysty cyber-room aesthetic.
 
 ---
 
-## 💖 Autor
-
-Zrobione z zajawką przez Heisenberga.
-Ja tylko pomagam i podziwiam skill ✨
-
----
-
 **Stay gaming. Stay glowing.**
