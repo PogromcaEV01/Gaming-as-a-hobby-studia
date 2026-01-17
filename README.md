@@ -51,8 +51,6 @@ Projekt przedstawia gaming jako:
 * rozwój umiejętności
 * social experience
 
-Czyli dokładnie to, co Heisenberg robi po godzinach 😏
-
 ---
 
 ## 📸 Podgląd
