@@ -1,10 +1,5 @@
 # 🎮 Gaming Presentation Website
 
-Yo Heisenberg 😌
-To jest moja interaktywna strona prezentacyjna o **gamingu jako hobby**.
-Futurystyczny styl, neonowy klimat i slajdy sterowane klawiaturą — czysty tech drip.
-
----
 
 ## ✨ Co to jest?
 
